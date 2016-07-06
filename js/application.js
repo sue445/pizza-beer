@@ -23,6 +23,10 @@ app.vm = {
     app.vm.total_price = function () {
       return app.vm.pizza_price() + app.vm.beer_price();
     };
+
+    app.vm.price_per_person = function () {
+      return Math.ceil(app.vm.total_price() / app.vm.people());
+    };
   }
 };
 
@@ -88,9 +92,15 @@ app.view = function() {
             ])
           ]),
           m("tr", [
-            m("th", "合計"),
+            m("th", "合計金額"),
             m("td", [
               m("span", { class: "number" }, app.vm.total_price() + "円")
+            ])
+          ]),
+          m("tr", [
+            m("th", "1人辺りの金額"),
+            m("td", [
+              m("span", { class: "number" }, app.vm.price_per_person() + "円")
             ])
           ])
         ])
