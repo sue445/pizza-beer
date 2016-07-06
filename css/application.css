@@ -2,3 +2,7 @@ body {
     padding-top: 70px;
     padding-bottom: 30px;
 }
+
+.number {
+    float: right;
+}
