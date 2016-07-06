@@ -17,7 +17,7 @@ app.vm = {
     };
 
     app.vm.beer_price = function () {
-      return app.vm.price_per_beer() * app.vm.people() * app.vm.beer_per_person();
+      return Math.ceil(app.vm.price_per_beer() * app.vm.people() * app.vm.beer_per_person());
     };
 
     app.vm.total_price = function () {
@@ -33,6 +33,7 @@ app.controller = function() {
 app.view = function() {
   return m("div", { class: "row" }, [
     m("div", { class: "col-md-6"}, [
+      m("h2", "入力フォーム"),
       m("form", [
         m("div", { class: "form-group" }, [
           m("label", { for: "people" }, "人数"),
@@ -65,7 +66,7 @@ app.view = function() {
       ])
     ]),
     m("div", { class: "col-md-6" }, [
-      m("h2", "発注量"),
+      m("h2", "計算結果（発注量）"),
       m("table", { class: "table table-condensed table-hover" }, [
         m("tbody", [
           m("tr", [
