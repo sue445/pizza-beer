@@ -42,28 +42,28 @@ app.view = function() {
         m("div", { class: "form-group" }, [
           m("label", { for: "people" }, "人数"),
           m("input", {
-            id: "people", type: "number", class: "form-control", placeholder: "人",
+            id: "people", type: "number", class: "form-control", placeholder: "人", min: 0,
             onchange: m.withAttr("value", app.vm.people), value: app.vm.people()
           })
         ]),
         m("div", { class: "form-group" }, [
           m("label", { for: "price_per_pizza" }, "ピザ（Lサイズ） 1枚辺りの税抜金額"),
           m("input", {
-            id: "price_per_pizza", type: "number", class: "form-control", placeholder: "円",
+            id: "price_per_pizza", type: "number", class: "form-control", placeholder: "円", min: 0,
             onchange: m.withAttr("value", app.vm.price_per_pizza), value: app.vm.price_per_pizza()
           })
         ]),
         m("div", { class: "form-group" }, [
           m("label", { for: "price_per_beer" }, "ビール 1本辺りの税抜金額"),
           m("input", {
-            id: "price_per_beer", type: "number", class: "form-control", placeholder: "円",
+            id: "price_per_beer", type: "number", class: "form-control", placeholder: "円", min: 0,
             onchange: m.withAttr("value", app.vm.price_per_beer), value: app.vm.price_per_beer()
           })
         ]),
         m("div", { class: "form-group" }, [
           m("label", { for: "beer_per_person" }, "1人辺りのビール消費本数"),
           m("input", {
-            id: "beer_per_person", type: "number", class: "form-control", placeholder: "本",
+            id: "beer_per_person", type: "number", class: "form-control", placeholder: "本", min: 0, step: "0.5",
             onchange: m.withAttr("value", app.vm.beer_per_person), value: app.vm.beer_per_person()
           })
         ])
