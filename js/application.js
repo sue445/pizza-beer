@@ -88,7 +88,7 @@ app.view = function() {
           m("tr", [
             m("th", "ビール"),
             m("td", [
-              m("span", { class: "number" }, app.vm.price_per_beer() + "円 x " + app.vm.people() + "人 x " + app.vm.beer_per_person() + "(本/人) = " + app.vm.beer_price() + "円")
+              m("span", { class: "number" }, app.vm.price_per_beer() + "円 x " + app.vm.people() + "人 x " + app.vm.beer_per_person() + "(本/人) ≒ " + app.vm.beer_price() + "円")
             ])
           ]),
           m("tr", [
